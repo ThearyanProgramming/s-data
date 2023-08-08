@@ -20,9 +20,9 @@ void enqueue(int value) {
         cout << "Queue is full. Cannot add a new element." << endl;
         return;
     }
-
+   rear = (rear + 1) % MAX_SIZE;
     queue[rear] = value;
-    rear = (rear + 1) % MAX_SIZE;
+ 
 }
 
 void dequeue() {
@@ -34,6 +34,8 @@ void dequeue() {
     cout << "Removed element: " << queue[front] << endl;
     front = (front + 1) % MAX_SIZE;
 }
+
+
 
 void display() {
     if (isEmpty()) {
